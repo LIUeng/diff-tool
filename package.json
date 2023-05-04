@@ -1,0 +1,26 @@
+{
+  "name": "diff-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "diff": "./bin/diff.js"
+  },
+  "scripts": {
+    "x": "tsc && diff"
+  },
+  "files": [
+    "tools/*"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.16.1",
+    "diff": "file:",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}
