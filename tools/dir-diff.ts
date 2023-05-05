@@ -118,7 +118,8 @@ function mdTable(...arr: Array<fileDiffProps>) {
 
   headers.unshift('文件名');
   headers.push('区别（byte）');
-  headers.push('区别（MB）');
+  headers.push('区别（kb）');
+  headers.push('区别（mb）');
 
   table.push(`|${headers.join('|')}|\n`);
   table.push(`|${Array(headers.length).fill('').join('-|')}-|\n`);
@@ -143,6 +144,7 @@ function mdTable(...arr: Array<fileDiffProps>) {
 
     let diffNum = Math.abs(nextSize - size);
     table.push(`|${diffNum}`);
+    table.push(`|${Math.round(diffNum / 1024)}`);
     table.push(`|${(diffNum / 1024 / 1024).toFixed(2)}`);
     table.push('|\n');
   }
@@ -156,6 +158,7 @@ function mdTable(...arr: Array<fileDiffProps>) {
       table.push(`|${size}`);
       let diffNum = Math.abs(0 - size);
       table.push(`|${diffNum}`);
+      table.push(`|${Math.round(diffNum / 1024)}`);
       table.push(`|${(diffNum / 1024 / 1024).toFixed(2)}`);
       table.push('|\n');
     }
