@@ -1,26 +1,30 @@
 {
-  "name": "diff-tool",
+  "name": "usediff",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "bin": {
-    "diff": "./bin/diff.js"
+    "usediff": "./bin/diff.js"
   },
   "scripts": {
-    "x": "tsc && diff"
+    "x": "tsc && usediff",
+    "compile": "tsc"
   },
   "files": [
-    "tools/*"
+    "dist",
+    "bin"
   ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^18.16.1",
-    "diff": "file:",
-    "typescript": "^5.0.4"
+    "arg": "^5.0.2",
+    "typescript": "^5.0.4",
+    "usediff": "file:"
   },
   "devDependencies": {
     "prettier": "^2.8.8"
-  }
+  },
+  "packageManager": "npm@10.2.3"
 }

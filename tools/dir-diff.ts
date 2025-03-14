@@ -71,15 +71,15 @@ function write(code, format = true): void {
       parser: 'markdown',
     });
   }
-  writeFileSync(`DIR_DIFF-${new Date().toLocaleDateString().replace(/\//g, '-')}.md`, code, { encoding: 'utf-8' });
-  console.log('写入成功');
+  console.log(code);
+  // writeFileSync(`DIR_DIFF-${new Date().toLocaleDateString().replace(/\//g, '-')}.md`, code, { encoding: 'utf-8' });
+  // console.log('写入成功');
 }
 
 function codeFrame(...arr: Array<fileDiffProps>): string {
   let md = [];
 
-  md.push('# 文件对比\n\n');
-  md.push('> 结果如下所示\n\n');
+  md.push('# 文件夹对比\n\n');
 
   // diff write to markdown file
   let i = 0;
@@ -117,9 +117,9 @@ function mdTable(...arr: Array<fileDiffProps>) {
   table.push(`## ${headers.join(' - ')}\n\n`);
 
   headers.unshift('文件名');
-  headers.push('区别（byte）');
-  headers.push('区别（kb）');
-  headers.push('区别（mb）');
+  headers.push('大小（byte）');
+  headers.push('大小（kb）');
+  headers.push('大小（mb）');
 
   table.push(`|${headers.join('|')}|\n`);
   table.push(`|${Array(headers.length).fill('').join('-|')}-|\n`);
